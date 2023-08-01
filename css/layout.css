@@ -11,15 +11,24 @@
     border:1px solid #f1f1f1;
     max-width: 600px;
     max-height: 600px;
+    width: calc(100vw - 30px);
     display: none;
+    border: 20px;
+    overflow: hidden;
+    box-shadow: 3px 3px 3px rgba(0,0,0,.3);
 }
 /*원래 안 보이는데 부모 클래스 popupshow 적용되면 나타난다*/
 .popupshow #popup{
     display: block;
 }
+/*딤처리*/
 .popupshow::before{
     content: "";
     position: fixed;
     left:0; right: 0; top: 0; bottom: 0;
-    background-color: rgb(0, 0,0, .6);
+    background-color: rgba(0, 0,0, 0.6);
+}
+/*팝업이 노출되었을때에는 스크롤 안되게 처리*/
+.popupshow{
+    overflow-y: hidden;
 }
