@@ -8,9 +8,9 @@
     border:1px solid #f1f1f1;
     display: none;
     border: 20px;
-    overflow: hidden;
     box-shadow: 3px 3px 3px rgba(0,0,0,.3);
     box-sizing: border-box;
+    border-radius: 30px;
    
    
    /* 최대사이즈 */
@@ -37,4 +37,38 @@
 /*팝업이 노출되었을때에는 스크롤 안되게 처리*/
 .popupshow{
     overflow-y: hidden;
+}
+/*팝업닫기버튼 스타일 가상선택자로 안되게 처리하기*/
+#popup button{
+    position: absolute;
+    right:0;
+    bottom: calc(100% - 0.5rem);
+    background-color: transparent;
+    width: 2rem; height: 2rem;
+    border: 0;
+    cursor:pointer;
+    font-size: 0;
+}
+#popup button:before,
+#popup button:after{
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+}
+#popup button:before{
+    top: 0;
+    left: 0;
+    right:0;
+    transform: rotate(-45deg);
+
+}
+#popup button:after{
+    top: 0;
+    left: 0;
+    right:0;
+    transform: rotate(45deg);
+
+
 }
